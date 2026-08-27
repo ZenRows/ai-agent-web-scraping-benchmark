@@ -171,10 +171,10 @@ The final benchmark contains 800 requests across four providers and four targets
 | Jina | Chrono24 | Cloudflare | 100% | 1,291 | 50 |
 | Jina | Reuters | Akamai | 100% | 1,036 | 50 |
 | Jina | Wikipedia | Unprotected | 100% | 1,343 | 50 |
-| Firecrawl | JobLookup | DataDome | 0% | 1,064 | 50 |
-| Firecrawl | Chrono24 | Cloudflare | 28% | 1,570 | 50 |
-| Firecrawl | Reuters | Akamai | 20% | 1,114 | 50 |
-| Firecrawl | Wikipedia | Unprotected | 24% | 1,169 | 50 |
+| Firecrawl | JobLookup | DataDome | 0% | 1,297 | 50 |
+| Firecrawl | Chrono24 | Cloudflare | 100% | 1,692 | 50 |
+| Firecrawl | Reuters | Akamai | 100% | 1,492 | 50 |
+| Firecrawl | Wikipedia | Unprotected | 100% | 1,510 | 50 |
 | CrawlForge | JobLookup | DataDome | 0% | 789 | 50 |
 | CrawlForge | Chrono24 | Cloudflare | 0% | 709 | 50 |
 | CrawlForge | Reuters | Akamai | 0% | 720 | 50 |
@@ -188,8 +188,8 @@ The following values represent the average success rate across all four targets.
 |---|---:|
 | ZenRows | 100.00% |
 | Jina | 99.50% |
+| Firecrawl | 75.00% |
 | CrawlForge | 25.00% |
-| Firecrawl | 18.00% |
 
 ### Overall benchmark summary
 
@@ -197,8 +197,8 @@ The following values represent the average success rate across all four targets.
 |---|---:|---:|---:|---:|
 | ZenRows | 200 | 200 | 100.00% | 5,216 |
 | Jina | 200 | 199 | 99.50% | 1,261 |
+| Firecrawl | 200 | 150 | 75.00% | 1,498 |
 | CrawlForge | 200 | 50 | 25.00% | 867 |
-| Firecrawl | 200 | 36 | 18.00% | 1,044 |
 
 ### Observed resource consumption
 
@@ -207,7 +207,7 @@ Dashboard usage was tracked during benchmark execution.
 | Provider | Starting Usage/Balance | Ending Usage/Balance | Consumed | Benchmark Requests | Observed Consumption per Request |
 |---|---:|---:|---:|---:|---:|
 | ZenRows | 786,640 credits used | 787,558 credits used | 918 credits | 200 | 4.59 credits/request |
-| Firecrawl | 977 credits | 925 credits | 52 credits | 200 | 0.26 credits/request |
+| Firecrawl | 5,875 credits | 5,675 credits | 200 credits | 200 | 1 credits/request |
 | Jina | 9,418,797 tokens left | 4,434,281 tokens left | 4,984,516 tokens | 200 | 24,922.58 tokens/request |
 | CrawlForge | 984 credits | 784 credits | 200 credits | 200 | 1 credit/request |
 
@@ -222,16 +222,6 @@ These values are dashboard observations from the benchmark run. They are not nor
 - Jina
 - Firecrawl
 - CrawlForge
-
-## Use cases
-
-This benchmark can be used for:
-
-- Comparing web scraping API reliability
-- Evaluating scraping performance against protected websites
-- Measuring response-time differences between providers
-- Testing scraping APIs against real-world anti-bot protection
-- Building datasets for web scraping API analysis
 
 ## Data sources
 
