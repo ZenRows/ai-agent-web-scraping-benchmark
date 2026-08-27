@@ -182,14 +182,14 @@ The final benchmark contains 800 requests across four providers and four targets
 
 ### Multi-target consistency summary
 
-The following values represent the average success rate across all four targets.
+The following values represent the average success rate across the three protected targets.
 
-| Provider | Average Success Rate |
+| Provider | Average Success Rate (3 protected targets) |
 |---|---:|
 | ZenRows | 100.00% |
-| Jina | 99.50% |
-| Firecrawl | 75.00% |
-| CrawlForge | 25.00% |
+| Jina | 99.33% |
+| Firecrawl | 66.67% |
+| CrawlForge | 0.00% |
 
 ### Overall benchmark summary
 
