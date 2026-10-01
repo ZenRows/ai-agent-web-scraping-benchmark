@@ -1,6 +1,6 @@
 # Best web scraping APIs in 2026 (Benchmarked)
 
-A Python benchmark that compares ZenRows, Jina, Firecrawl, and CrawlForge across protected and unprotected websites. The benchmark measures successful content retrieval, response time, HTTP status, target status, content length, and request cost.
+A Python benchmark that compares Zenrows, Jina, Firecrawl, and CrawlForge across protected and unprotected websites. The benchmark measures successful content retrieval, response time, HTTP status, target status, content length, and request cost.
 
 ## Features
 
@@ -16,7 +16,7 @@ A Python benchmark that compares ZenRows, Jina, Firecrawl, and CrawlForge across
 ## Prerequisites
 
 - Python 3
-- A ZenRows account and API key
+- A Zenrows account and API key
 - A Firecrawl account and API key
 - A CrawlForge account and API key
 - A Jina account and API key is optional
@@ -28,8 +28,8 @@ A Python benchmark that compares ZenRows, Jina, Firecrawl, and CrawlForge across
 1. Clone the repository:
 
 ```bash
-git clone <REPOSITORY_URL>
-cd <REPOSITORY_DIRECTORY>
+git clone https://github.com/ZenRows/ai-agent-web-scraping-benchmark.git
+cd ai-agent-web-scraping-benchmark
 ```
 
 2. Create a virtual environment:
@@ -51,6 +51,12 @@ pip install -r requirements.txt
 ```
 
 ## Configuration
+
+Copy `.env.example` to `.env` and fill in your keys:
+
+```bash
+cp .env.example .env
+```
 
 Create a `.env` file in the project root.
 
@@ -157,28 +163,28 @@ The CSV records one row per request with:
 
 ## Benchmark results
 
-The final benchmark contains 800 requests across four providers and four targets.
+The final benchmark contains 800 requests across four providers and four targets. Zenrows, Jina and CrawlForge ran on 2026-08-20; Firecrawl ran on 2026-08-25. Every figure below is reproducible from `results/raw_results.csv`.
 
 ### Raw results
 
 | Provider | Target | Protection | Success Rate | Avg. Response Time (ms) | Total Requests |
 |---|---|---|---:|---:|---:|
-| ZenRows | JobLookup | DataDome | 100% | 10,052 | 50 |
-| ZenRows | Chrono24 | Cloudflare | 100% | 4,591 | 50 |
-| ZenRows | Reuters | Akamai | 100% | 4,103 | 50 |
-| ZenRows | Wikipedia | Unprotected | 100% | 2,116 | 50 |
-| Jina | JobLookup | DataDome | 98% | 1,046 | 50 |
-| Jina | Chrono24 | Cloudflare | 100% | 1,291 | 50 |
-| Jina | Reuters | Akamai | 100% | 1,036 | 50 |
-| Jina | Wikipedia | Unprotected | 100% | 1,343 | 50 |
-| Firecrawl | JobLookup | DataDome | 0% | 1,297 | 50 |
-| Firecrawl | Chrono24 | Cloudflare | 100% | 1,692 | 50 |
-| Firecrawl | Reuters | Akamai | 100% | 1,492 | 50 |
-| Firecrawl | Wikipedia | Unprotected | 100% | 1,510 | 50 |
-| CrawlForge | JobLookup | DataDome | 0% | 789 | 50 |
+| Zenrows | JobLookup | DataDome | 100% | 10,053 | 50 |
+| Zenrows | Chrono24 | Cloudflare | 100% | 4,590 | 50 |
+| Zenrows | Reuters | Akamai | 100% | 4,103 | 50 |
+| Zenrows | Wikipedia | Unprotected | 100% | 2,115 | 50 |
+| Jina | JobLookup | DataDome | 98% | 1,029 | 50 |
+| Jina | Chrono24 | Cloudflare | 100% | 1,417 | 50 |
+| Jina | Reuters | Akamai | 100% | 1,242 | 50 |
+| Jina | Wikipedia | Unprotected | 100% | 1,340 | 50 |
+| Firecrawl | JobLookup | DataDome | 0% | 1,299 | 50 |
+| Firecrawl | Chrono24 | Cloudflare | 100% | 1,688 | 50 |
+| Firecrawl | Reuters | Akamai | 100% | 1,488 | 50 |
+| Firecrawl | Wikipedia | Unprotected | 100% | 1,512 | 50 |
+| CrawlForge | JobLookup | DataDome | 0% | 781 | 50 |
 | CrawlForge | Chrono24 | Cloudflare | 0% | 709 | 50 |
-| CrawlForge | Reuters | Akamai | 0% | 720 | 50 |
-| CrawlForge | Wikipedia | Unprotected | 100% | 1,216 | 50 |
+| CrawlForge | Reuters | Akamai | 0% | 728 | 50 |
+| CrawlForge | Wikipedia | Unprotected | 100% | 1,251 | 50 |
 
 ### Multi-target consistency summary
 
@@ -186,18 +192,20 @@ The following values represent the average success rate across the three protect
 
 | Provider | Average Success Rate (3 protected targets) |
 |---|---:|
-| ZenRows | 100.00% |
+| Zenrows | 100.00% |
 | Jina | 99.33% |
 | Firecrawl | 66.67% |
 | CrawlForge | 0.00% |
 
 ### Overall benchmark summary
 
+These averages span all four targets, including the unprotected baseline, so they read higher than the three-protected-target figures above. The accompanying article quotes the three-protected-target denominator throughout.
+
 | Provider | Total Requests | Successful Requests | Overall Success Rate | Average Response Time (ms) |
 |---|---:|---:|---:|---:|
-| ZenRows | 200 | 200 | 100.00% | 5,216 |
-| Jina | 200 | 199 | 99.50% | 1,261 |
-| Firecrawl | 200 | 150 | 75.00% | 1,498 |
+| Zenrows | 200 | 200 | 100.00% | 5,215 |
+| Jina | 200 | 199 | 99.50% | 1,257 |
+| Firecrawl | 200 | 150 | 75.00% | 1,497 |
 | CrawlForge | 200 | 50 | 25.00% | 867 |
 
 ### Observed resource consumption
@@ -206,7 +214,7 @@ Dashboard usage was tracked during benchmark execution.
 
 | Provider | Starting Usage/Balance | Ending Usage/Balance | Consumed | Benchmark Requests | Observed Consumption per Request |
 |---|---:|---:|---:|---:|---:|
-| ZenRows | 786,640 credits used | 787,558 credits used | 918 credits | 200 | 4.59 credits/request |
+| Zenrows | 786,640 credits used | 787,558 credits used | 918 credits | 200 | 4.59 credits/request |
 | Firecrawl | 5,875 credits | 5,675 credits | 200 credits | 200 | 1 credits/request |
 | Jina | 9,418,797 tokens left | 4,434,281 tokens left | 4,984,516 tokens | 200 | 24,922.58 tokens/request |
 | CrawlForge | 984 credits | 784 credits | 200 credits | 200 | 1 credit/request |
@@ -218,7 +226,7 @@ These values are dashboard observations from the benchmark run. They are not nor
 - Python
 - Requests
 - python-dotenv
-- ZenRows
+- Zenrows
 - Jina
 - Firecrawl
 - CrawlForge
@@ -249,7 +257,7 @@ WIKIPEDIA_URL
 
 ### Missing API keys
 
-ZenRows, Firecrawl, and CrawlForge require their respective API keys. Jina can also use an API key through `JINA_API_KEY`.
+Zenrows, Firecrawl, and CrawlForge require their respective API keys. Jina can also use an API key through `JINA_API_KEY`.
 
 ### Requests marked as failures
 
@@ -257,8 +265,8 @@ A provider can return HTTP 200 while the target content is still unsuccessful. T
 
 ## Related article
 
-This repository accompanies the ZenRows article:
+This repository accompanies the Zenrows article:
 
-**Best Web Scraping APIs in 2026 (Benchmarked)**
+**Best Web Scraping API for AI Agents in 2026**
 
-[ARTICLE URL]
+https://www.zenrows.com/blog/best-web-scraping-api-for-ai-agents
